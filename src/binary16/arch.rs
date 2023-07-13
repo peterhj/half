@@ -1,5 +1,6 @@
 #![allow(dead_code, unused_imports)]
 use crate::leading_zeros::leading_zeros_u16;
+use core::convert::{TryInto};
 use core::mem;
 
 #[cfg(all(

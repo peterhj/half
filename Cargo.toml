@@ -9,18 +9,20 @@ readme = "README.md"
 keywords = ["f16", "bfloat16", "no_std"]
 license = "MIT OR Apache-2.0"
 categories = ["no-std", "data-structures", "encoding"]
-edition = "2021"
-rust-version = "1.61"
+edition = "2018"
+#rust-version = "1.61"
 exclude = [".git*", ".editorconfig"]
 
 [features]
-default = ["std"]
+default = ["std", "bfloat16"]
 std = ["alloc"]
 use-intrinsics = []
 alloc = []
+bfloat16 = []
 
 [dependencies]
-cfg-if = "1.0.0"
+#cfg-if = "1.0.0"
+cfg_if = { path = "../cfg_if" }
 bytemuck = { version = "1.4.1", default-features = false, features = [
     "derive",
 ], optional = true }
@@ -31,7 +33,7 @@ num-traits = { version = "0.2.14", default-features = false, features = ["libm"]
 zerocopy = { version = "0.6.0", default-features = false, optional = true }
 
 [target.'cfg(target_arch = "spirv")'.dependencies]
-crunchy = "0.2.2"
+crunchy = { version = "0.2.2", optional = true }
 
 [dev-dependencies]
 criterion = "0.4.0"

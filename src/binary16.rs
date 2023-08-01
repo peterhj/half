@@ -49,10 +49,10 @@ impl f16 {
 
     /// Constructs a 16-bit floating point value from a 32-bit floating point value.
     ///
-    /// If the 32-bit value is to large to fit in 16-bits, ±∞ will result. NaN values are
+    /// If the 32-bit value is to large to fit in 16-bits, \pm \infty will result. NaN values are
     /// preserved. 32-bit subnormal values are too tiny to be represented in 16-bits and result in
-    /// ±0. Exponents that underflow the minimum 16-bit exponent will result in 16-bit subnormals
-    /// or ±0. All other values are truncated and rounded to the nearest representable 16-bit
+    /// \pm 0. Exponents that underflow the minimum 16-bit exponent will result in 16-bit subnormals
+    /// or \pm 0. All other values are truncated and rounded to the nearest representable 16-bit
     /// value.
     #[inline]
     #[must_use]
@@ -66,10 +66,10 @@ impl f16 {
     /// intrinsics, which allows it to be `const`. [`from_f32`][Self::from_f32] should be preferred
     /// in any non-`const` context.
     ///
-    /// If the 32-bit value is to large to fit in 16-bits, ±∞ will result. NaN values are
+    /// If the 32-bit value is to large to fit in 16-bits, \pm \infty will result. NaN values are
     /// preserved. 32-bit subnormal values are too tiny to be represented in 16-bits and result in
-    /// ±0. Exponents that underflow the minimum 16-bit exponent will result in 16-bit subnormals
-    /// or ±0. All other values are truncated and rounded to the nearest representable 16-bit
+    /// \pm 0. Exponents that underflow the minimum 16-bit exponent will result in 16-bit subnormals
+    /// or \pm 0. All other values are truncated and rounded to the nearest representable 16-bit
     /// value.
     #[inline]
     #[must_use]
@@ -79,10 +79,10 @@ impl f16 {
 
     /// Constructs a 16-bit floating point value from a 64-bit floating point value.
     ///
-    /// If the 64-bit value is to large to fit in 16-bits, ±∞ will result. NaN values are
+    /// If the 64-bit value is to large to fit in 16-bits, \pm \infty will result. NaN values are
     /// preserved. 64-bit subnormal values are too tiny to be represented in 16-bits and result in
-    /// ±0. Exponents that underflow the minimum 16-bit exponent will result in 16-bit subnormals
-    /// or ±0. All other values are truncated and rounded to the nearest representable 16-bit
+    /// \pm 0. Exponents that underflow the minimum 16-bit exponent will result in 16-bit subnormals
+    /// or \pm 0. All other values are truncated and rounded to the nearest representable 16-bit
     /// value.
     #[inline]
     #[must_use]
@@ -96,10 +96,10 @@ impl f16 {
     /// intrinsics, which allows it to be `const`. [`from_f64`][Self::from_f64] should be preferred
     /// in any non-`const` context.
     ///
-    /// If the 64-bit value is to large to fit in 16-bits, ±∞ will result. NaN values are
+    /// If the 64-bit value is to large to fit in 16-bits, \pm \infty will result. NaN values are
     /// preserved. 64-bit subnormal values are too tiny to be represented in 16-bits and result in
-    /// ±0. Exponents that underflow the minimum 16-bit exponent will result in 16-bit subnormals
-    /// or ±0. All other values are truncated and rounded to the nearest representable 16-bit
+    /// \pm 0. Exponents that underflow the minimum 16-bit exponent will result in 16-bit subnormals
+    /// or \pm 0. All other values are truncated and rounded to the nearest representable 16-bit
     /// value.
     #[inline]
     #[must_use]
@@ -290,7 +290,7 @@ impl f16 {
         self.0 & 0x7FFFu16 > 0x7C00u16
     }
 
-    /// Returns `true` if this value is ±∞ and `false`.
+    /// Returns `true` if this value is \pm \infty and `false`.
     /// otherwise.
     ///
     /// # Examples
@@ -427,7 +427,7 @@ impl f16 {
     }
 
     /// Returns `true` if and only if `self` has a positive sign, including `+0.0`, `NaNs` with a
-    /// positive sign bit and +∞.
+    /// positive sign bit and +\infty.
     ///
     /// # Examples
     ///
@@ -450,7 +450,7 @@ impl f16 {
     }
 
     /// Returns `true` if and only if `self` has a negative sign, including `-0.0`, `NaNs` with a
-    /// negative sign bit and −∞.
+    /// negative sign bit and -\infty.
     ///
     /// # Examples
     ///
@@ -713,7 +713,7 @@ impl f16 {
     ///
     /// This is the difference between 1.0 and the next largest representable number.
     pub const EPSILON: f16 = f16(0x1400u16);
-    /// [`f16`] positive Infinity (+∞)
+    /// [`f16`] positive Infinity (+\infty)
     pub const INFINITY: f16 = f16(0x7C00u16);
     /// Number of [`f16`] significant digits in base 2
     pub const MANTISSA_DIGITS: u32 = 11;
@@ -733,7 +733,7 @@ impl f16 {
     pub const MIN_POSITIVE: f16 = f16(0x0400u16);
     /// [`f16`] Not a Number (NaN)
     pub const NAN: f16 = f16(0x7E00u16);
-    /// [`f16`] negative infinity (-∞)
+    /// [`f16`] negative infinity (-\infty)
     pub const NEG_INFINITY: f16 = f16(0xFC00u16);
     /// The radix or base of the internal representation of [`f16`]
     pub const RADIX: u32 = 2;
@@ -752,41 +752,41 @@ impl f16 {
     /// [`f16`] -1
     pub const NEG_ONE: f16 = f16(0xBC00u16);
 
-    /// [`f16`] Euler's number (ℯ)
+    /// [`f16`] Euler's number (e)
     pub const E: f16 = f16(0x4170u16);
-    /// [`f16`] Archimedes' constant (π)
+    /// [`f16`] Archimedes' constant (\pi)
     pub const PI: f16 = f16(0x4248u16);
-    /// [`f16`] 1/π
+    /// [`f16`] 1/\pi
     pub const FRAC_1_PI: f16 = f16(0x3518u16);
-    /// [`f16`] 1/√2
+    /// [`f16`] 1/\sqrt 2
     pub const FRAC_1_SQRT_2: f16 = f16(0x39A8u16);
-    /// [`f16`] 2/π
+    /// [`f16`] 2/\pi
     pub const FRAC_2_PI: f16 = f16(0x3918u16);
-    /// [`f16`] 2/√π
+    /// [`f16`] 2/\sqrt \pi
     pub const FRAC_2_SQRT_PI: f16 = f16(0x3C83u16);
-    /// [`f16`] π/2
+    /// [`f16`] \pi/2
     pub const FRAC_PI_2: f16 = f16(0x3E48u16);
-    /// [`f16`] π/3
+    /// [`f16`] \pi/3
     pub const FRAC_PI_3: f16 = f16(0x3C30u16);
-    /// [`f16`] π/4
+    /// [`f16`] \pi/4
     pub const FRAC_PI_4: f16 = f16(0x3A48u16);
-    /// [`f16`] π/6
+    /// [`f16`] \pi/6
     pub const FRAC_PI_6: f16 = f16(0x3830u16);
-    /// [`f16`] π/8
+    /// [`f16`] \pi/8
     pub const FRAC_PI_8: f16 = f16(0x3648u16);
-    /// [`f16`] 𝗅𝗇 10
+    /// [`f16`] \ln 10
     pub const LN_10: f16 = f16(0x409Bu16);
-    /// [`f16`] 𝗅𝗇 2
+    /// [`f16`] \ln 2
     pub const LN_2: f16 = f16(0x398Cu16);
-    /// [`f16`] 𝗅𝗈𝗀₁₀ℯ
+    /// [`f16`] \log_10 e
     pub const LOG10_E: f16 = f16(0x36F3u16);
-    /// [`f16`] 𝗅𝗈𝗀₁₀2
+    /// [`f16`] \log_10 2
     pub const LOG10_2: f16 = f16(0x34D1u16);
-    /// [`f16`] 𝗅𝗈𝗀₂ℯ
+    /// [`f16`] \log_2 e
     pub const LOG2_E: f16 = f16(0x3DC5u16);
-    /// [`f16`] 𝗅𝗈𝗀₂10
+    /// [`f16`] \log_2 10
     pub const LOG2_10: f16 = f16(0x42A5u16);
-    /// [`f16`] √2
+    /// [`f16`] \sqrt 2
     pub const SQRT_2: f16 = f16(0x3DA8u16);
 }
 
@@ -930,56 +930,56 @@ impl FromStr for f16 {
 #[cfg(not(target_arch = "spirv"))]
 impl Debug for f16 {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), Error> {
-        write!(f, "{:?}", self.to_f32())
+        Debug::fmt(&self.to_f32(), f)
     }
 }
 
 #[cfg(not(target_arch = "spirv"))]
 impl Display for f16 {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), Error> {
-        write!(f, "{}", self.to_f32())
+        Display::fmt(&self.to_f32(), f)
     }
 }
 
 #[cfg(not(target_arch = "spirv"))]
 impl LowerExp for f16 {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), Error> {
-        write!(f, "{:e}", self.to_f32())
+        LowerExp::fmt(&self.to_f32(), f)
     }
 }
 
 #[cfg(not(target_arch = "spirv"))]
 impl UpperExp for f16 {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), Error> {
-        write!(f, "{:E}", self.to_f32())
+        UpperExp::fmt(&self.to_f32(), f)
     }
 }
 
 #[cfg(not(target_arch = "spirv"))]
 impl Binary for f16 {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), Error> {
-        write!(f, "{:b}", self.0)
+        Binary::fmt(&self.0, f)
     }
 }
 
 #[cfg(not(target_arch = "spirv"))]
 impl Octal for f16 {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), Error> {
-        write!(f, "{:o}", self.0)
+        Octal::fmt(&self.0, f)
     }
 }
 
 #[cfg(not(target_arch = "spirv"))]
 impl LowerHex for f16 {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), Error> {
-        write!(f, "{:x}", self.0)
+        LowerHex::fmt(&self.0, f)
     }
 }
 
 #[cfg(not(target_arch = "spirv"))]
 impl UpperHex for f16 {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), Error> {
-        write!(f, "{:X}", self.0)
+        UpperHex::fmt(&self.0, f)
     }
 }
 
